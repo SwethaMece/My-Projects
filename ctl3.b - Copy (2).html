@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Slideshow</title>
+  <style>
+    /* Styles for the slideshow container */
+    .slideshow-container {
+      position: relative;
+      max-width: 1000px;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    /* Styles for the slideshow images */
+    .slideshow-img {
+      width: 100%;
+      height: auto;
+      display: none;
+    }
+
+    /* Styles for the fade animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from { opacity: .4 }
+      to { opacity: 1 }
+    }
+  </style>
+</head>
+<body>
+  <div class="slideshow-container">
+    <!-- Slideshow images -->
+    <img class="slideshow-img fade" src="https://via.placeholder.com/600?text=Image+1" alt="Image 1">
+    <img class="slideshow-img fade" src="https://via.placeholder.com/600?text=Image+2" alt="Image 2">
+    <img class="slideshow-img fade" src="https://via.placeholder.com/600?text=Image+3" alt="Image 3">
+  </div>
+
+  <script>
+    var slideIndex = 0;
+    carousel();
+
+    function carousel() {
+      var i;
+      var slides = document.getElementsByClassName("slideshow-img");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+  </script>
+</body>
+</html>

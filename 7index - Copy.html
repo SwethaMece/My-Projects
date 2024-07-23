@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher Studies Guidance</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <script src="static/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Higher Studies Guidance for 12th Passed Out Students</h1>
+        <form id="guidanceForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required><br>
+            <label for="cutoff">Cutoff (out of 200):</label>
+            <input type="number" id="cutoff" name="cutoff" max="200" required><br>
+            <label for="interest">Area of Interest:</label>
+            <select id="interest" name="interest" required>
+                <option value="engineering">Engineering</option>
+                <option value="medicine">Medicine</option>
+                <option value="arts">Arts</option>
+                <option value="science">Science</option>
+                <option value="commerce">Commerce</option>
+            </select><br>
+            <button type="submit">Get Guidance</button>
+        </form>
+        <div id="results"></div>
+    </div>
+</body>
+</html>

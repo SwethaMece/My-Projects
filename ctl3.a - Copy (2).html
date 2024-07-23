@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <style>
+    /* Styles for the thumbnail images */
+    .thumbnail {
+      width: 100px;
+      height: 100px;
+      margin: 5px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .thumbnail:hover {
+      transform: scale(1.2); /* Enlarge the image on hover */
+    }
+
+    /* Styles for the enlarged image */
+    .enlarged-image {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      z-index: 9999;
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    /* Style for the close button */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: rgba(255, 255, 255, 0.5);
+      padding: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="gallery">
+    <!-- Thumbnail images -->
+    <img class="thumbnail" src="https://via.placeholder.com/150?text=Image+1" onclick="showImage('https://via.placeholder.com/600?text=Image+1+Large')" alt="Image 1">
+    <img class="thumbnail" src="https://via.placeholder.com/150?text=Image+2" onclick="showImage('https://via.placeholder.com/600?text=Image+2+Large')" alt="Image 2">
+    <img class="thumbnail" src="https://via.placeholder.com/150?text=Image+3" onclick="showImage('https://via.placeholder.com/600?text=Image+3+Large')" alt="Image 3">
+    <!-- Enlarged image -->
+    <img class="enlarged-image" id="enlargedImage" onclick="hideImage()" alt="Enlarged Image">
+    <!-- Close button for the enlarged image -->
+    <div class="close-btn" onclick="hideImage()">Close</div>
+  </div>
+
+  <script>
+    function showImage(src) {
+      var enlargedImage = document.getElementById("enlargedImage");
+      enlargedImage.src = src;
+      enlargedImage.style.display = "block";
+    }
+
+    function hideImage() {
+      var enlargedImage = document.getElementById("enlargedImage");
+      enlargedImage.style.display = "none";
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile-Friendly Navigation Menu</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #3498db; /* Blue background */
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .navbar-menu {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-link {
+      margin-right: 20px;
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-link:hover {
+      color: #fff;
+    }
+
+    /* Hamburger menu icon */
+    .menu-icon {
+      display: none; /* Hide by default on larger screens */
+      cursor: pointer;
+    }
+
+    /* Dropdown menu for smaller screens */
+    @media only screen and (max-width: 768px) {
+      .navbar-menu {
+        display: none; /* Hide by default on smaller screens */
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        background-color: #2ecc71; /* Green background */
+        padding: 20px;
+        border-radius: 5px;
+      }
+
+      .navbar-menu.show {
+        display: flex; /* Show when the menu icon is clicked */
+      }
+
+      .navbar-link {
+        margin: 10px 0;
+      }
+
+      .menu-icon {
+        display: block; /* Show the menu icon on smaller screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">Logo</div>
+    <div class="navbar-menu" id="navbarMenu">
+      <a href="#" class="navbar-link">Home</a>
+      <a href="#" class="navbar-link">About</a>
+      <a href="#" class="navbar-link">Services</a>
+      <a href="#" class="navbar-link">Contact</a>
+    </div>
+    <div class="menu-icon" onclick="toggleMenu()">
+      &#9776; <!-- Hamburger icon -->
+    </div>
+  </nav>
+
+  <script>
+    function toggleMenu() {
+      var navbarMenu = document.getElementById("navbarMenu");
+      navbarMenu.classList.toggle("show");
+    }
+  </script>
+</body>
+</html>

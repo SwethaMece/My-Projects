@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Signup</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-container {
+            width: 100%;
+        }
+
+        .form-toggle {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .form-toggle button {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .form-toggle button:hover {
+            color: #000;
+        }
+
+        form {
+            display: none;
+            flex-direction: column;
+        }
+
+        form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #333;
+        }
+
+        form input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        form button {
+            padding: 10px;
+            background: #ff7e5f;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        form button:hover {
+            background: #feb47b;
+        }
+
+        #error-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="form-toggle">
+                <button id="login-toggle" onclick="showLogin()">Login</button>
+                <button id="signup-toggle" onclick="showSignup()">Signup</button>
+            </div>
+            <form id="login-form">
+                <h2>Login</h2>
+                <input type="text" id="login-username" placeholder="Username" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <form id="signup-form">
+                <h2>Signup</h2>
+                <input type="text" id="signup-username" placeholder="Username" required>
+                <input type="email" id="signup-email" placeholder="Email" required>
+                <input type="password" id="signup-password" placeholder="Password" required>
+                <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
+                <button type="submit">Signup</button>
+                <div id="error-message"></div>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            showLogin();
+        });
+
+        function showLogin() {
+            document.getElementById("login-form").style.display = "flex";
+            document.getElementById("signup-form").style.display = "none";
+            document.getElementById("login-toggle").style.backgroundColor = "#ff7e5f";
+            document.getElementById("signup-toggle").style.backgroundColor = "#fff";
+        }
+
+        function showSignup() {
+            document.getElementById("login-form").style.display = "none";
+            document.getElementById("signup-form").style.display = "flex";
+            document.getElementById("signup-toggle").style.backgroundColor = "#ff7e5f";
+            document.getElementById("login-toggle").style.backgroundColor = "#fff";
+        }
+
+        document.getElementById("signup-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var username = document.getElementById("signup-username").value;
+            var email = document.getElementById("signup-email").value;
+            var password = document.getElementById("signup-password").value;
+            var confirmPassword = document.getElementById("signup-confirm-password").value;
+
+            if (password !== confirmPassword) {
+                document.getElementById("error-message").textContent = "Passwords do not match!";
+            } else {
+                document.getElementById("error-message").textContent = "";
+                alert("Signup successful!");
+                // You can add your signup logic here
+            }
+        });
+    </script>
+</body>
+</html>

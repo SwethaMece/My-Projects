@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Greeting Alert</title>
+  <style>
+    /* Styling for the alert box */
+    #customAlert {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: black;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  var currentTime = new Date();
+  var currentHour = currentTime.getHours();
+  var greeting;
+
+  if (currentHour < 12) {
+    greeting = "Good morning!";
+  } else if (currentHour < 18) {
+    greeting = "Good afternoon!";
+  } else {
+    greeting = "Good evening!";
+  }
+
+  // Creating a custom alert box
+  var customAlert = document.createElement('div');
+  customAlert.id = 'customAlert';
+  customAlert.textContent = greeting;
+  document.body.appendChild(customAlert);
+</script>
+
+</body>
+</html>

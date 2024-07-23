@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Colorful Button</title>
+  <style>
+    #colorButton {
+      width: 150px;
+      height: 50px;
+      background-color: #3498db; /* Default color */
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      outline: none;
+    }
+
+    #colorButton:hover {
+      background-color: #2ecc71; /* Hover color */
+    }
+
+    #colorButton:active {
+      background-color: #e74c3c; /* Active color */
+    }
+  </style>
+</head>
+<body>
+
+<button id="colorButton" onclick="changeColor()">Click Me</button>
+
+<script>
+  function changeColor() {
+    var button = document.getElementById("colorButton");
+    var colors = ["#1abc9c", "#2ecc71", "#3498db", "#9b59b6", "#f1c40f", "#e67e22", "#e74c3c", "#95a5a6"];
+    var randomColor = colors[Math.floor(Math.random() * colors.length)];
+    button.style.backgroundColor = randomColor;
+  }
+</script>
+
+</body>
+</html>

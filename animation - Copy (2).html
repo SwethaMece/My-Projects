@@ -1,0 +1,45 @@
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;style&gt;
+body {
+font-family: &#39;Arial&#39;, sans-serif;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100vh;
+margin: 0;
+}
+#animatedSquare {
+width: 100px;
+height: 100px;
+background-color: #3498db;
+transition: background-color 1s ease-in-out;
+}
+button {
+padding: 10px;
+background-color: #2ecc71;
+color: white;
+border: none;
+cursor: pointer;
+}
+&lt;/style&gt;
+&lt;title&gt;Color Animation&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;animatedSquare&quot;&gt;&lt;/div&gt;
+&lt;button onclick=&quot;startAnimation()&quot;&gt;Change Color&lt;/button&gt;
+&lt;script&gt;
+function startAnimation() {
+var square = document.getElementById(&quot;animatedSquare&quot;);
+// Change the background color
+square.style.backgroundColor = getRandomColor();
+
+}
+function getRandomColor() {
+// Generate a random hex color code
+return &quot;#&quot; + Math.floor(Math.random()*16777215).toString(16);
+}
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
