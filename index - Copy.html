@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher Studies Guidance</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700|Open+Sans:400,700&display=swap">
+</head>
+<body>
+    <div class="container">
+        <h1>Higher Studies Guidance</h1>
+        <form id="guidanceForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="cutoff">Cutoff:</label>
+            <input type="number" id="cutoff" name="cutoff" required>
+
+            <label for="location">College Location (State):</label>
+            <select id="location" name="location" required>
+                <option value="">Select State</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Karnataka">Karnataka</option>
+                <!-- Add other states as needed -->
+            </select>
+
+            <label for="interest">Area of Interest:</label>
+            <input type="text" id="interest" name="interest" required>
+
+            <button type="submit">Submit</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
